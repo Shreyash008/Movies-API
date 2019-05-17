@@ -1,10 +1,10 @@
-const app = document.getElementById('main');
+const dev = document.getElementById('main');
 const logo = document.createElement('img');
 logo.src = 'logo.png';
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
-app.appendChild(logo);
-app.appendChild(container);
+dev.appendChild(logo);
+de.appendChild(container);
 var request = new XMLHttpRequest();
 request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
 request.onload = function () {
@@ -22,10 +22,6 @@ request.onload = function () {
       card.appendChild(h1);
       card.appendChild(p);
     });
-  } else {
-    const errorMessage = document.createElement('marquee');
-    errorMessage.textContent = `Gah, it's not working!`;
-    app.appendChild(errorMessage);
-  }
+  } 
 }
 request.send();
